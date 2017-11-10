@@ -57,19 +57,28 @@ POST
 
 * **请求参数**
 
-
 |是否必选|参数名|类型|参数说明
 |--------|--------|----|-----
 |必选|api_key|String|调用此API的API Key
 |必选|api_secret|String|调用此API的API Secret
 |必选（三选一）|image_url|String|图片的URL 
-|               |image_file File|一个图片，二进制文件，需要用post multipart/form-data的方式上传。
+|               |image_file |File|一个图片，二进制文件，需要用post multipart/form-data的方式上传。
 |               |image_base64	|String	|base64编码的二进制图片数据如果同时传入了image_url、image_file和image_base64参数，本API使用顺序为image_file优先，image_url最低。
 
+其他参数可参考网址：https://console.faceplusplus.com.cn/documents/7776484
 
+### 利用Python调用Recognize Text API的步骤
+
+* Step1:通过Python中requests库的post方法向Recognize Text API的URL传递三个参数：api_key、api_secret、image_file，并获取返回结果
+
+* Step2:对返回结果进行解析，以获取识别后的文本
+
+具体实现可参考文件：调用API进行文字识别.py
 
 
 ## 汉王OCR的使用
+
+参考Word文档：汉王OCR的使用
 
 
 
